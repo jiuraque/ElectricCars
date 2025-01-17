@@ -93,9 +93,20 @@ main {
   padding: 15px;
 }
 
+.products h3 {
+    padding: 15px;
+}
+
 .product img {
   width: 450px;
   height: 400px;
+}
+
+.product button {
+    width: 100px;
+    height: auto;
+    font-family: "Oxanium", serif;
+    font-weight: 500;
 }
 
 /* Pagination */
@@ -104,6 +115,7 @@ main {
   grid-area: pagination;
   text-align: center;
   padding: 15px;
+  font-family: "Oxanium", serif;
 }
 
 /* Footer */
