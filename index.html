@@ -10,41 +10,60 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Tazamanía</title>
+    <title>Rayo Car</title>
     <link rel="stylesheet" href="./assets/CSS/style.css" />
   </head>
   <body>
     <div>
       <nav>
-        <h1>Tazamanía</h1>
+        <h1>Rayo Car</h1>
         <i class="fas fa-bars"></i>
       </nav>
-      <section>
-        <search>
-          <form action="get" action="/search">
-            <h4>Ordenar Por:</h4>
-            <select name="select-taza">
-              <option value="auto" selected>Auto</option>
-            </select>
-          </form>
-        </search>
-      </section>
-      <main>
-        <div class="grid-container">
-          <div class="grid-item">
-            <img src="" alt="">
-            <p>lila mug</p>
-            <button></button>
-          </div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
+
+      <section class="filters">
+        <h2>Filtros</h2>
+        <div class="filter-options">
+          <label for="marca">Buscar por:</label>
+          <select id="buscador">
+            <option value="marca">Modelo</option>
+            <option value="tipo">Tipo</option>
+            <option value="color">Color</option>
+          </select>
         </div>
+      </section>
+
+      <main class="products">
+        <article class="product">
+          <img src="./assets/imgs/car1.jpg" alt="Mustang EV SUV">
+          <h3> Ford Mustang EV SUV</h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+        <article class="product">
+          <img src="./assets/imgs/car2.jpg" alt="Mustang Match-E">
+          <h3> Ford Mustang Match-E</h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+        <article class="product">
+          <img src="./assets/imgs/car3.jpg" alt="Tesla Model 3">
+          <h3> Tesla Model 3/h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+        <article class="product">
+          <img src="./assets/imgs/car4.jpg" alt="Volvo XC40">
+          <h3> Volvo XC40</h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+        <article class="product">
+          <img src="./assets/imgs/car5.jpg" alt="Audi e-tron GT">
+          <h3> Audi e-tron GT</h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+        <article class="product">
+          <img src="./assets/imgs/car6.jpg" alt="Polestar 1">
+          <h3> Polestar 1</h3>
+          <button type="button"> Cotizar aquí</button>
+        </article>
+      </main>
 
         <div class="pagination">
           <button id="prev" disabled>&lt; Prev</button>
