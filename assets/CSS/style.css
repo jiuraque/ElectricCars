@@ -50,6 +50,10 @@ nav i {
   padding: 15px;
 }
 
+nav ul {
+    list-style: none;
+}
+
 /* Filters */
 
 .filters {
@@ -117,6 +121,15 @@ main {
   padding: 15px;
   font-family: "Oxanium", serif;
 }
+
+.pagination button {
+    color:  #0b090a;
+    bottom: unset;
+    padding: 15px;
+    font-family: "Oxanium", serif;
+  }
+
+
 
 /* Footer */
 
