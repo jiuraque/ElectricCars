@@ -84,6 +84,16 @@ nav i {
   margin: 1em 0 0.5em;
 }
 
+#buscador {
+    color:  #0b090a;
+    bottom: unset;
+    padding: 7px;
+    font-family: "Oxanium", serif;
+    width: 150px;
+    font-size: 0.890em;
+}
+
+
 /* Products */
 
 main {
@@ -141,7 +151,7 @@ main {
     bottom: unset;
     padding: 15px;
     font-family: "Oxanium", serif;
-  }
+}
 
 
 
@@ -151,6 +161,16 @@ footer {
   grid-area: footer;
   background-color: #ddd;
   text-align: center;
-  padding: 10px;
-  font-size: 0.875em;
+  padding: 15px;
+  font-size: 0.975em;
 }
+
+footer i {
+    padding: 10px;
+    margin: 0 0 0.5em ;
+    font-size: 1.5em;
+}
+
+
+
+
