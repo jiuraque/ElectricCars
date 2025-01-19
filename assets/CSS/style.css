@@ -22,7 +22,7 @@ body {
     "pagination"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto 1fr auto auto;
   background-color: #f4f4f4;
   min-height: 100vh;
 }
@@ -182,3 +182,54 @@ footer i {
 
 /* Media Queries */
 
+@media (min-width: 576px) {
+
+    body {
+      grid-template-areas:
+        "nav filters"
+        "nav main"
+        "nav pagination"
+        "footer pagination";
+      grid-template-columns: 1fr 1fr; 
+      background-color: #f4f4f4;
+      min-height: 100vh;
+    }
+  
+    nav {
+      grid-area: nav;
+      left: 0;
+      top: 0;
+      right: initial;
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    nav h1 {
+      display: block;
+      position: relative;
+      z-index: 11;
+      margin-top: 10px;
+    }
+  
+    .nav-links {
+      display: block;
+      margin: 150px 0 0;
+      position: absolute;
+      top: auto;
+      cursor: pointer;
+    }
+
+    .nav-links:hover {
+      color: blue;
+    }
+    
+    #menu-icon {
+      display: none;
+    }
+    
+}
