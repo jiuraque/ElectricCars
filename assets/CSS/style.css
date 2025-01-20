@@ -1,5 +1,3 @@
-/* Estilos Generales */
-
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
 
 * {
@@ -8,28 +6,26 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   font-family: "Oxanium", serif;
   font-size: 16px;
 }
 
-body {
+.container {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
     "nav"
-    "filters"
+    "filter"
     "main"
-    "pagination"
+    "paginacion"
     "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto auto;
-  background-color: #f4f4f4;
-  height: 100vh;
+  gap: 10px;
+  padding: 0;
 }
 
-/* Nav bar */
-
-nav {
+.nav {
   grid-area: nav;
   background-color: #0b090a;
   color: #ffffff;
@@ -42,12 +38,12 @@ nav {
   z-index: 10;
 }
 
-nav h1 {
+.nav h1 {
   font-size: 2.5em;
   padding: 15px;
 }
 
-nav i {
+.nav i {
   padding: 15px;
 }
 
@@ -63,7 +59,7 @@ nav i {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  width: auto;
   text-align: center;
   padding: 10px 0;
 }
@@ -79,20 +75,21 @@ nav i {
   padding: 10px 15px;
 }
 
-/* Search Filters */
-
-.filters {
-  grid-area: filters;
-  padding: 15px;
-  margin-top: 5em;
+.filter {
+  grid-area: filter;
+  text-align: center;
+  background-color: #ddd;
+  padding: 16px;
+  margin-top: 50px;
 }
 
-.filters h2 {
+.label-filter {
   font-size: 1.5em;
+  padding: 10px;
 }
 
 .filter-options {
-  margin: 1em 0 0.5em;
+  padding-top: 16px;
 }
 
 #buscador {
@@ -104,18 +101,11 @@ nav i {
   font-size: 0.89em;
 }
 
-/* Products */
-
-main {
+.main {
   grid-area: main;
   display: grid;
   place-content: center;
-}
-
-.products {
-  display: grid;
-  place-content: center;
-  gap: 20px;
+  gap: 30px;
   padding: 15px;
   width: 100%;
 }
@@ -126,7 +116,7 @@ main {
   align-items: center;
   text-align: center;
   border: 1px solid #0b090a;
-  width: 500px;
+  width: 100%;
   height: auto;
   padding: 15px;
 }
@@ -136,8 +126,9 @@ main {
 }
 
 .product img {
-  width: 450px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product button {
@@ -147,26 +138,22 @@ main {
   font-weight: 500;
 }
 
-/* Pagination */
-
-.pagination {
-  grid-area: pagination;
+.paginacion {
+  grid-area: paginacion;
   text-align: center;
   padding: 16px;
   font-family: "Oxanium", serif;
   margin: 0 0 0.5em;
 }
 
-.pagination button {
+.paginacion button {
   color: #0b090a;
   bottom: unset;
   padding: 15px;
   font-family: "Oxanium", serif;
 }
 
-/* Footer */
-
-footer {
+.footer {
   grid-area: footer;
   background-color: #ddd;
   text-align: center;
@@ -174,166 +161,95 @@ footer {
   font-size: 0.975em;
 }
 
-footer i {
+.footer i {
   padding: 10px;
   margin: 0 0 0.5em;
   font-size: 1.5em;
 }
 
-/* Media Queries */
-
 @media (min-width: 576px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "nav filter"
+      "nav main"
+      "nav paginacion"
+      "footer paginacion";
+    gap: 0;
+    padding: 0;
+  }
 
-    body {
-      grid-template-areas:
-        "nav filters"
-        "nav main"
-        "nav pagination"
-        "footer pagination";
-        grid-template-columns: 300px 1fr; 
-        grid-template-rows: auto auto 1fr auto;
-      background-color: #f4f4f4;
-      min-height: 100vh; 
-      margin: 0;
-      padding: 0;
-    }
-  
+  .nav {
+    grid-area: nav;
+    background-color: #0b090a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
 
-    nav {
-      grid-area: nav;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300px; 
-      height: 100%; 
-      background-color: #0b090a;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-    }
-  
+  .nav h1 {
+    display: block;
+    position: relative;
+    z-index: 11;
+    margin-top: 10px;
+  }
 
-    nav h1 {
-      display: block;
-      position: relative;
-      z-index: 11;
-      margin-top: 10px;
-    }
-  
-    .nav-links {
-      display: block;
-      margin: 150px 0 0;
-      position: absolute;
-      top: auto;
-      cursor: pointer;
-    }
+  .nav-links {
+    display: block;
+    margin: 150px 0 0;
+    position: absolute;
+    top: auto;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    left: auto;
+  }
 
-    #menu-icon {
-      display: none;
-    }
+  #menu-icon {
+    display: none;
+  }
 
-    .filters {
-      grid-area: filters;
-      display: flex;
-      flex-direction: column;
-      padding: 15px;
-      align-items: center;
-    }
-    
-    .filters h2 {
-      font-size: 1.5em;
-      padding: 10px;
-    }
-    
-    .filter-options {
-      margin: 1em 0 0.5em;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    #buscador {
-      color: #0b090a;
-      bottom: unset;
-      padding: 7px;
-      font-family: "Oxanium", serif;
-      width: 150px;
-      font-size: 0.89em;
-    }
+  .filter {
+    grid-area: filter;
+    padding: 15px;
+    margin-top: auto;
+    text-align: center;
+  }
 
+  .custom-label {
+    padding: 8px 12px;
+    display: inline-block;
+    font-weight: 600;
+  }
 
-    main {
-      grid-area: main;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  .filter-options {
+    margin: 1em 0 0.5em;
+    padding: 10px;
+    text-align: center;
+  }
 
-    .products {
-      display: grid;
-      place-content: center;
-      gap: 20px;
-      padding: 15px;
-      width: 100%;
-    }
-    
-    .product {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      border: 1px solid #0b090a;
-      width: 400px;
-      height: auto;
-      padding: 15px;
-    }
-    
-    .products h3 {
-      padding: 15px;
-    }
-    
-    .product img {
-      width: 350px;
-      height: 300px;
-    }
-    
-    .product button {
-      width: 100px;
-      height: auto;
-      font-family: "Oxanium", serif;
-      font-weight: 500;
-    }
+  #buscador {
+    color: #0b090a;
+    bottom: unset;
+    padding: 7px;
+    font-family: "Oxanium", serif;
+    width: 100%;
+    font-size: 0.89em;
+  }
 
-    .pagination {
-      grid-area: pagination;
-      width: 100%;
-      font-family: "Oxanium", serif;
-      margin: 0 0 0.5em;
-    }
-    
-    .pagination button {
-      color: #0b090a;
-      bottom: unset;
-      padding: 15px;
-      font-family: "Oxanium", serif;
-    }
-    
-    /* Footer */
-    
-    footer {
-      grid-area: footer;
-      background-color: #ddd;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.975em;
-    }
-    
-    footer i {
-      padding: 10px;
-      margin: 0 0 0.5em;
-      font-size: 1.5em;
-    }
-    
-    
+  .main {
+    grid-area: main;
+    display: grid;
+    place-content: unset;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    padding: 15px;
+    width: 100%;
+  }
 }
